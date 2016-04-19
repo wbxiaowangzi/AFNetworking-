@@ -35,18 +35,25 @@
 
 /**
  `AFHTTPSessionManager` is a subclass of `AFURLSessionManager` with convenience methods for making HTTP requests. When a `baseURL` is provided, requests made with the `GET` / `POST` / et al. convenience methods can be made with relative paths.
+ 'AFHTTPSessionManager’是一个子类的AFURLSessionManager便利方法进行HTTP请求。当 “baseURL” 已经提供,请求用“得到”/“POST”/等人可以用相对路径的简便方法。
 
  ## Subclassing Notes
+ ## 子类化注意
 
  Developers targeting iOS 7 or Mac OS X 10.9 or later that deal extensively with a web service are encouraged to subclass `AFHTTPSessionManager`, providing a class method that returns a shared singleton object on which authentication and other configuration can be shared across the application.
+ 开发者针对iOS7或Mac OS X 10.9或更高版本,鼓励广泛处理web服务子类AFHTTPSessionManager,提供一个类方法返回一个单例对象共享的认证和其他配置可以在应用程序之间共享
 
  For developers targeting iOS 6 or Mac OS X 10.8 or earlier, `AFHTTPRequestOperationManager` may be used to similar effect.
+ 为开发人员针对iOS 6或Mac OS X 10.8或更早,AFHTTPRequestOperationManager可用于类似的效果。
 
  ## Methods to Override
+ 方法覆盖
 
  To change the behavior of all data task operation construction, which is also used in the `GET` / `POST` / et al. convenience methods, override `dataTaskWithRequest:completionHandler:`.
+ 改变行为的所有数据任务操作施工,也用于“GET”/“POST”等简便方法,覆盖“dataTaskWithRequest:completionHandler:”。
 
  ## Serialization
+ ## 序列化
 
  Requests created by an HTTP client will contain default headers and encode parameters according to the `requestSerializer` property, which is an object conforming to `<AFURLRequestSerialization>`.
 
